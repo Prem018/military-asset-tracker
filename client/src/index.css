@@ -1,0 +1,216 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 250 100% 99%; /* #FAFAFA */
+  --foreground: 220 13% 13%; /* #212121 */
+  --muted: 240 5% 96%; /* #F5F5F5 */
+  --muted-foreground: 240 4% 46%; /* #757575 */
+  --popover: 0 0% 100%; /* #FFFFFF */
+  --popover-foreground: 220 13% 13%; /* #212121 */
+  --card: 0 0% 100%; /* #FFFFFF */
+  --card-foreground: 220 13% 13%; /* #212121 */
+  --border: 220 13% 91%; /* #E5E5E5 */
+  --input: 220 13% 91%; /* #E5E5E5 */
+  --primary: 207 90% 54%; /* #1976D2 */
+  --primary-foreground: 211 100% 99%; /* #FFFFFF */
+  --secondary: 240 5% 96%; /* #F5F5F5 */
+  --secondary-foreground: 220 9% 10%; /* #1A1A1A */
+  --accent: 240 5% 96%; /* #F5F5F5 */
+  --accent-foreground: 220 9% 10%; /* #1A1A1A */
+  --destructive: 0 84% 60%; /* #EF5350 */
+  --destructive-foreground: 0 0% 98%; /* #FAFAFA */
+  --ring: 207 90% 54%; /* #1976D2 */
+  --radius: 0.5rem;
+  --chart-1: 207 90% 54%; /* #1976D2 */
+  --chart-2: 142 76% 36%; /* #388E3C */
+  --chart-3: 45 93% 47%; /* #FFA000 */
+  --chart-4: 315 50% 48%; /* #C2185B */
+  --chart-5: 260 100% 64%; /* #7B1FA2 */
+  --sidebar-background: 0 0% 100%; /* #FFFFFF */
+  --sidebar-foreground: 220 13% 13%; /* #212121 */
+  --sidebar-primary: 207 90% 54%; /* #1976D2 */
+  --sidebar-primary-foreground: 211 100% 99%; /* #FFFFFF */
+  --sidebar-accent: 240 5% 96%; /* #F5F5F5 */
+  --sidebar-accent-foreground: 220 9% 10%; /* #1A1A1A */
+  --sidebar-border: 220 13% 91%; /* #E5E5E5 */
+  --sidebar-ring: 207 90% 54%; /* #1976D2 */
+}
+
+.dark {
+  --background: 224 71% 4%; /* #0A0A0B */
+  --foreground: 0 0% 98%; /* #FAFAFA */
+  --muted: 223 47% 11%; /* #1C1C21 */
+  --muted-foreground: 215 21% 65%; /* #9CA3AF */
+  --popover: 224 71% 4%; /* #0A0A0B */
+  --popover-foreground: 0 0% 98%; /* #FAFAFA */
+  --card: 224 71% 4%; /* #0A0A0B */
+  --card-foreground: 0 0% 98%; /* #FAFAFA */
+  --border: 216 12% 15%; /* #27272A */
+  --input: 216 12% 15%; /* #27272A */
+  --primary: 207 90% 54%; /* #1976D2 */
+  --primary-foreground: 211 100% 99%; /* #FFFFFF */
+  --secondary: 216 12% 15%; /* #27272A */
+  --secondary-foreground: 0 0% 98%; /* #FAFAFA */
+  --accent: 216 12% 15%; /* #27272A */
+  --accent-foreground: 0 0% 98%; /* #FAFAFA */
+  --destructive: 0 62% 31%; /* #7F1D1D */
+  --destructive-foreground: 0 0% 98%; /* #FAFAFA */
+  --ring: 215 21% 84%; /* #D1D5DB */
+  --radius: 0.5rem;
+  --chart-1: 207 90% 54%; /* #1976D2 */
+  --chart-2: 142 76% 36%; /* #388E3C */
+  --chart-3: 45 93% 47%; /* #FFA000 */
+  --chart-4: 315 50% 48%; /* #C2185B */
+  --chart-5: 260 100% 64%; /* #7B1FA2 */
+  --sidebar-background: 224 71% 4%; /* #0A0A0B */
+  --sidebar-foreground: 0 0% 98%; /* #FAFAFA */
+  --sidebar-primary: 207 90% 54%; /* #1976D2 */
+  --sidebar-primary-foreground: 211 100% 99%; /* #FFFFFF */
+  --sidebar-accent: 216 12% 15%; /* #27272A */
+  --sidebar-accent-foreground: 0 0% 98%; /* #FAFAFA */
+  --sidebar-border: 216 12% 15%; /* #27272A */
+  --sidebar-ring: 215 21% 84%; /* #D1D5DB */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  }
+}
+
+/* Custom styles for military theme */
+.military-green {
+  background-color: hsl(142 76% 36%); /* #388E3C */
+}
+
+.military-green-light {
+  background-color: hsl(142 50% 88%); /* #E8F5E8 */
+}
+
+.military-blue {
+  background-color: hsl(207 90% 54%); /* #1976D2 */
+}
+
+.military-blue-light {
+  background-color: hsl(207 90% 94%); /* #E3F2FD */
+}
+
+/* Font Awesome fallback styles */
+.fas {
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure proper spacing and styling for navigation */
+.nav-tab {
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-tab:hover {
+  color: hsl(var(--foreground));
+}
+
+.nav-tab.active {
+  color: hsl(var(--primary));
+  border-color: hsl(var(--primary));
+}
+
+/* Table hover effects */
+.table-row-hover:hover {
+  background-color: hsl(var(--muted));
+}
+
+/* Status badge styles */
+.status-badge {
+  @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+}
+
+.status-badge.completed {
+  @apply bg-green-100 text-green-800;
+}
+
+.status-badge.pending {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.status-badge.in-transit {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.status-badge.cancelled {
+  @apply bg-red-100 text-red-800;
+}
+
+.status-badge.active {
+  @apply bg-green-100 text-green-800;
+}
+
+.status-badge.assigned {
+  @apply bg-orange-100 text-orange-800;
+}
+
+/* Military color palette utilities */
+.text-military-green {
+  color: hsl(142 76% 36%);
+}
+
+.text-military-blue {
+  color: hsl(207 90% 54%);
+}
+
+.bg-military-green {
+  background-color: hsl(142 76% 36%);
+}
+
+.bg-military-blue {
+  background-color: hsl(207 90% 54%);
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .nav-tab {
+    @apply text-xs px-2;
+  }
+  
+  .nav-tab i {
+    @apply mr-1;
+  }
+}
+
+/* Loading states */
+.loading-spinner {
+  @apply animate-spin rounded-full h-4 w-4 border-b-2 border-primary;
+}
+
+/* Focus styles for accessibility */
+.focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2;
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted-foreground)) hsl(var(--muted));
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground));
+  border-radius: 3px;
+}
